@@ -17,6 +17,9 @@ find_package(PkgConfig REQUIRED)
 find_path(CPPCODEC_INCLUDE_DIR NAMES base64_default_rfc4648.hpp REQUIRED PATH_SUFFIXES include/cppcodec)
 message(${CPPCODEC_INCLUDE_DIR})
 
+# Benchmarks are registered as tests
+enable_testing()
+
 add_subdirectory(lib)
 add_subdirectory(benchmarks)
 

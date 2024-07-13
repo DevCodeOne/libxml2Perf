@@ -1,0 +1,17 @@
+{
+  "name" : "libxml2perf",
+  "version-string" : "latest",
+  "dependencies" : [ {
+    "name" : "libxml2",
+    "version>=" : "2.11.7"
+  }, {
+    "name" : "gtest",
+    "version>=" : "1.14.0#1"
+  }, {
+    "name" : "cppcodec",
+    "version>=" : "0.2#4"
+  }, {
+    "name" : "benchmark",
+    "version>=" : "1.8.3#3"
+  } ]
+}

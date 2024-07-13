@@ -1,6 +1,7 @@
 add_executable(libxml2Perf
             Benchmarks.cpp
             BenchmarkValues.h)
+add_test(PerformanceTests libxml2Perf)
 
 find_package(benchmark REQUIRED)
 
