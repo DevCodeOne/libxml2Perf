@@ -37,12 +37,10 @@ jobs:
         with:
           vcpkgJsonGlob: 'vcpkg.json'
   job-windows:
-    name: ${{ matrix.os }}-${{ github.workflow }}
+    name: windows-latest-${{ github.workflow }}
     runs-on: windows-latest
     strategy:
       fail-fast: false
-      matrix:
-        os: [ubuntu-latest, macos-latest]
     #env:
     #
     # [OPTIONAL] Define the vcpkg's triplet 
