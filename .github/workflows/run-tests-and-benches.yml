@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [ubuntu-latest, macos-latest]
     #env:
     #
     # [OPTIONAL] Define the vcpkg's triplet 
@@ -26,6 +26,34 @@ jobs:
     # VCPKG_DEFAULT_TRIPLET: ${{ matrix.triplet }} 
 
     steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - uses: lukka/get-cmake@latest
+
+      - name: Restore from cache and setup vcpkg executable and data files.
+        uses: lukka/run-vcpkg@v11
+        with:
+          vcpkgJsonGlob: 'vcpkg.json'
+  job-windows:
+    name: ${{ matrix.os }}-${{ github.workflow }}
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    #env:
+    #
+    # [OPTIONAL] Define the vcpkg's triplet 
+    # you want to enforce, otherwise the default one 
+    # for the hosting system will be automatically
+    # choosen (x64 is the default on all platforms, 
+    # e.g. x64-osx).
+    # VCPKG_DEFAULT_TRIPLET: ${{ matrix.triplet }} 
+
+    steps:
+      - run: choco install pkgconfiglite
       - uses: actions/checkout@v4
         with:
           submodules: true
