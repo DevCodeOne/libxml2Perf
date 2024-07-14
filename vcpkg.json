@@ -1,6 +1,7 @@
 {
   "name" : "libxml2perf",
   "version-string" : "latest",
+  "builtin-baseline": "f7423ee180c4b7f40d43402c2feb3859161ef625",
   "dependencies" : [ {
     "name" : "libxml2",
     "version>=" : "2.11.7"
