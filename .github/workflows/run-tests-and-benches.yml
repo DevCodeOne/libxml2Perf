@@ -4,10 +4,6 @@ on:
   pull_request:
     branches: 
     - master
-  workflow_dispatch:
-  schedule:
-  - cron: '0 1 * * *'
-
 jobs:
   job:
     name: ${{ matrix.os }}-${{ github.workflow }}
